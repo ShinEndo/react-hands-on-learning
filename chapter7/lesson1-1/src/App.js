@@ -3,22 +3,6 @@ import './App.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-// function CheckBox() {
-//   const [checked,setChecked] = useState(false);
-
-//   useEffect(()=>{
-//     alert(`checked: ${checked.toString()}`);
-//     localStorage.setItem("checkbox-value", checked);
-//   },[checked]);
-
-//   return (
-//     <>
-//       <input type="checkbox" value={checked} onChange={()=> setChecked(checked => !checked)}/>
-//       {checked ? "checked" : "not chekced"}
-//     </>
-//   )
-// }
-
 function App() {
   const [val, set] = useState("");
   const [phrase, setPharase] = useState("example phrase");
@@ -35,6 +19,10 @@ function App() {
   useEffect(()=>{
     console.log(`saving phrase: "${phrase}"`);
   },[phrase]);
+
+  useEffect(()=>{
+    console.log("either val or phrase has changed");
+  },[val,phrase]);
 
   return (
     <>

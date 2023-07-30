@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useFetch } from "./useFetch";
+import React from "react";
+import { Fetch } from "./Fetch";
 
 function GitHubUser({login}){
-  const {loading, data, error} = useFetch(`https://api.github.com/users/${login}`);
-  
-  if(data) {
-    return <pre>{JSON.stringify(data,null,2)}</pre>;
-  }
+  return <Fetch uri={`https://api.github.com/users/${login}`} renderSuccess={UserDetail}/>
+}
 
-  if(loading) {
-    return <h1>Loading...</h1>
-  }
-
+function UserDetail({data}) {
   return (
     <div className="githubUser">
       <img src={data.avatar_url} alt={data.name} stye={{width:200}} />
@@ -22,7 +16,6 @@ function GitHubUser({login}){
       </div>
     </div>
   );
-
 }
 
 function App() {

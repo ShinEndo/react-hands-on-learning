@@ -7,9 +7,8 @@ export const useFetch = (uri) => {
 
     useEffect(()=>{
         if(!uri) return;
-        fetch(uri, {
-          method: 'GET',
-        }).then(data => data.json())
+        fetch(uri,
+        ).then(data => data.json())
           .then(setData)
           .then(()=>setLoading(false))
           .catch(setError);

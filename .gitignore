@@ -1,5 +1,5 @@
 *node_modules/
-.env
+*.env
 
 /chapter5/my-project/
 

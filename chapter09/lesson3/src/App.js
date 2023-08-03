@@ -14,9 +14,11 @@ function Status() {
 
 function App() {
   return (
-    <ErrorBoundary>
-      <Status />
-    </ErrorBoundary>
+    <Suspense fallback={<GridLoader />}>
+      <ErrorBoundary>
+        <Status />
+      </ErrorBoundary>
+    </Suspense>
   )
 }
 

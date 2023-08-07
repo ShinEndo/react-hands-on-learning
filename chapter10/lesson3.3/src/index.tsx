@@ -21,5 +21,4 @@ const root = ReactDOM.createRoot(
 root.render(
     <App item="jacket"/>
     // <App item={1}/>
-);
-
+); 

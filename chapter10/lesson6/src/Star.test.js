@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Star from "./Star";
+import {render} from '@testing-library/react'
+import { toHaveAttribute } from "@testing-library/jest-dom";
 
-test("render a star", () => {
-    const div = document.createElement("div");
-    const root = ReactDOM.createRoot(div);
-    root.render(<Star />,div);
-    expect(div.querySelector("svg")).toBeTruthy();
+test("render a star", async () => {
+    render(<Star />);
+    expect(document.querySelector("svg")).toBeTruthy();
 });
